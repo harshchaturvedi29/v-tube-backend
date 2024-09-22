@@ -11,7 +11,9 @@ dotenv.config({
 
 
 connectDB()
+//connectDB was a async method and whenever async method is executed it returns a promise which we can handle using .then and .catch
 .then(() => {
+    //here we are doing that when connecton is successful app starts listening to the port
     app.listen(process.env.PORT || 8000, () => {
         console.log(`⚙️ Server is running at port : ${process.env.PORT}`);
     })
